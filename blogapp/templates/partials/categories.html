@@ -1,0 +1,21 @@
+<div class="col-xl-6 col-xxl-3 mb-3">
+    <h6 class="mb-0">Categories</h6>
+    <hr>
+    <ul class="list-unstyled">
+
+    {% for category in categories %}
+
+        {% if category.slug == selected_category %}
+
+        <li> <a class="dropdown-item active" href="{% url 'blogs_by_category' category.slug %}">{{ category.name|title }}</a> </li>
+        
+        {% else %}
+ 
+        <li> <a class="dropdown-item" href="{% url 'blogs_by_category' category.slug %}">{{ category.name|title }}</a> </li>
+
+        {% endif %}
+
+    {% endfor %}
+
+</ul>
+</div>
